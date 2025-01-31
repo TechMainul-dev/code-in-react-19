@@ -1,14 +1,8 @@
 {
-  "folders": [
-    {
-      "path": "."
-    }
+	"folders": [
+		{
+			"path": "."
+		}
   ],
-  "settings": {
-    "workbench.colorTheme": "Learn with Sumit Official Theme",
-    "editor.tabSize": 2,
-    "prettier.tabWidth": 2,
-    "editor.lineHeight": 22,
-    "cSpell.words": ["Boimela", "tapa"]
-  }
+  "settings": {}
 }
