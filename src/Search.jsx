@@ -9,7 +9,7 @@ function Search({ searchTerm, onSearchBook }) {
         value={searchTerm}
         placeholder="Search Books..."
         onChange={(event) => onSearchBook(event.target.value)}
-        className="mb-4 border rounded-md p-1 w-full px-3"
+        className="mb-4 border rounded-md p-1 w-full px-3 shadow"
       />
     </form>
   );

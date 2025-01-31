@@ -12,7 +12,11 @@ function BookList({ searchTerm, books, onFeatureBook }) {
     );
   });
 
-  return <div className="space-y-4">{rows}</div>;
+  return (
+    <div className="space-y-4 grid gap-2 mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+      {rows}
+    </div>
+  );
 }
 
 BookList.propTypes = {
