@@ -68,7 +68,7 @@ const BOOKS = [
 
 function Boimela() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [books, setBooks] = useState(BOOKS);
+  const [books, setBooks] = useState(BOOKS.slice(0, 6));
 
   const toggleFeatured = (id) => {
     setBooks(
