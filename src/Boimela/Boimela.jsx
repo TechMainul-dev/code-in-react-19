@@ -77,7 +77,6 @@ function Boimela() {
       ),
     );
   };
-  console.log(books);
 
   return (
     <div className="mx-auto p-4">
