@@ -6,15 +6,16 @@ export const MovieList = ({
   rateMovie,
   toggleWatched,
   deleteMovie,
+  filter,
 }) => {
   return (
-    <div>
+    <div className="w-ful">
       {movies.length === 0 ? (
         <p className="bg-red-200 text-red-500 text-2xl px-2 py-7 rounded-xl text-center">
-          No movies in you watch list. Add some
+          No movies in you {filter || 'watch'} list. Add some
         </p>
       ) : (
-        <ul className="space-y-3">
+        <ul className="space-y-3 flex flex-wrap">
           {movies.map((movie) => (
             <MovieItem
               key={movie.id}
@@ -35,4 +36,5 @@ MovieList.propTypes = {
   rateMovie: PropTypes.func.isRequired,
   toggleWatched: PropTypes.func.isRequired,
   deleteMovie: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };

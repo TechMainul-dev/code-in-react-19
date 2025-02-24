@@ -23,11 +23,11 @@ export const MovieForm = ({ addMovie }) => {
   };
 
   const formControl =
-    'flex-1 h-10 p-2 border border-gray-700 dark:bg-gray-800 rounded mb-5 me-2';
+    'flex-1 h-12 px-4 border border-gray-700 dark:bg-gray-800 rounded-md me-2 text-xl';
 
   return (
-    <form onSubmit={handleSubmit} className="p-4">
-      <div className="">
+    <form onSubmit={handleSubmit} className="text-center">
+      <div className="inline-flex flex-wrap gap-3 items-center mx-auto">
         <input
           type="text"
           placeholder="Enter movie name..."
@@ -48,14 +48,13 @@ export const MovieForm = ({ addMovie }) => {
           <option value="Hoichoi">Hoichoi</option>
           <option value="Others">Others</option>
         </select>
+        <button
+          type="submit"
+          className={`border bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-1`}
+        >
+          Add
+        </button>
       </div>
-
-      <button
-        type="submit"
-        className="border bg-blue-600 hover:to-blue-700 text-white rounded-full px-3 py-1"
-      >
-        Add{' '}
-      </button>
     </form>
   );
 };

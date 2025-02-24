@@ -8,24 +8,27 @@ export const MovieItem = ({ movie, rateMovie, toggleWatched, deleteMovie }) => {
   };
 
   return (
-    <li className="flex flex-col gap-2 text-md border rounded-lg p-3 m-2">
+    <li
+      className={`flex-1 flex flex-col gap-2 text-md border rounded-lg p-3 m-2 ${
+        movie.watched ? 'border-blue-600' : 'border-green-600'
+      }`}
+    >
       <ul
-        className={`flex gap-2 ${
+        className={`flex flex-col gap-2 ${
           !movie.watched && 'line-through text-gray-400'
         }`}
       >
         <li>
-          Movie Title:{' '}
-          <span className="text-blue-700 dark:text-amber-500">
+          <h3 className="text-2xl text-blue-700 dark:text-amber-500">
             {movie.title}
-          </span>
+          </h3>
         </li>
 
         <li>
           Platform:{' '}
-          <span className="text-blue-700 dark:text-amber-500">{movie.ott}</span>
+          <span className="text-blue-700 dark:text-amber-400">{movie.ott}</span>
         </li>
-        <li className="inline-flex items-center gap-1 text-blue-700 dark:text-amber-500">
+        <li className="inline-flex items-center gap-1">
           {' '}
           Rating
           {movie.rating && (
@@ -34,18 +37,24 @@ export const MovieItem = ({ movie, rateMovie, toggleWatched, deleteMovie }) => {
             </>
           )}
         </li>
+        <li>
+          <ReactStars
+            count={5}
+            value={movie?.rating}
+            onChange={ratingChange}
+            size={24}
+            activeColor="#ffd700"
+          />
+        </li>
       </ul>
       <div className="inline-flex items-center gap-2">
-        <ReactStars
-          count={5}
-          value={movie?.rating}
-          onChange={ratingChange}
-          size={24}
-          activeColor="#ffd700"
-        />
         <button
           onClick={() => toggleWatched(movie.id)}
-          className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded-2xl min-w-28"
+          className={`${
+            movie.watched
+              ? 'bg-blue-600 hover:bg-blue-700'
+              : 'bg-green-600 hover:bg-green-700'
+          } px-3 py-1 text-white rounded-2xl min-w-28`}
         >
           {movie.watched ? 'Unwatched' : 'Watched'}
         </button>
