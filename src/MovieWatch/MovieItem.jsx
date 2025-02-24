@@ -6,11 +6,13 @@ export const MovieItem = ({ movie }) => {
   return (
     <li className="text-xl border rounded-lg p-3 m-2">
       Movie Title:
-      <span>{movie.title}</span>
+      <span className="text-blue-700 dark:text-amber-500">{movie.title} </span>
       and ott os
-      <span>{movie.ott}</span>
-      <span>{movie.rating}</span>
-      <span>{movie.watched}</span>
+      <span className="text-blue-700 dark:text-amber-500">{movie.ott} </span>
+      <span className="text-blue-700 dark:text-amber-500">{movie.rating} </span>
+      <span className="text-blue-700 dark:text-amber-500">
+        {movie.watched}{' '}
+      </span>
     </li>
   );
 };
