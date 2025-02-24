@@ -11,8 +11,17 @@ export const MovieList = ({
   return (
     <div className="w-ful">
       {movies.length === 0 ? (
-        <p className="bg-red-200 text-red-500 text-2xl px-2 py-7 rounded-xl text-center">
-          No movies in you {filter || 'watch'} list. Add some
+        <p
+          className={`${
+            filter.toLowerCase() == 'all'
+              ? 'bg-red-200 text-red-500'
+              : filter.toLowerCase() == 'watched'
+              ? 'text-green-400'
+              : 'text-blue-400'
+          } text-3xl font-bold px-2 py-7 rounded-xl text-center`}
+        >
+          No movies in your {filter.toLowerCase() == 'all' ? 'watch' : filter}
+          &nbsp; list. Add some
         </p>
       ) : (
         <ul className="space-y-3 flex flex-wrap">

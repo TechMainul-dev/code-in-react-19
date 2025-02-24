@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 
 export const Filter = ({ filter, setFilter }) => {
-  const btnClasses = 'border text-white rounded-full px-5 py-1 text-xl';
+  const btnClasses =
+    ' min-w-[120px] border text-white rounded-full px-5 py-1 text-xl';
 
   return (
     <div className="flex flex-wrap justify-center gap-2">
       <button
         onClick={() => setFilter('all')}
         className={`${btnClasses} ${
-          filter === 'all' ? 'bg-gray-700' : 'bg-gray-600 hover:bg-gray-700'
-        }`}
+          filter === 'all' ? 'bg-cyan-300' : 'bg-cyan-400 hover:bg-cyan-500'
+        } text-[#000!important]`}
       >
         All
       </button>
