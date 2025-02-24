@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import { MovieItem } from './MovieItem';
 
-export const MovieList = ({ movies, rateMovie, toggleWatch, deleteMovie }) => {
+export const MovieList = ({
+  movies,
+  rateMovie,
+  toggleWatched,
+  deleteMovie,
+}) => {
   return (
     <div>
       {movies.length === 0 ? (
@@ -15,7 +20,7 @@ export const MovieList = ({ movies, rateMovie, toggleWatch, deleteMovie }) => {
               key={movie.id}
               movie={movie}
               rateMovie={rateMovie}
-              toggleWatch={toggleWatch}
+              toggleWatched={toggleWatched}
               deleteMovie={deleteMovie}
             />
           ))}
@@ -28,6 +33,6 @@ export const MovieList = ({ movies, rateMovie, toggleWatch, deleteMovie }) => {
 MovieList.propTypes = {
   movies: PropTypes.array.isRequired,
   rateMovie: PropTypes.func.isRequired,
-  toggleWatch: PropTypes.func.isRequired,
+  toggleWatched: PropTypes.func.isRequired,
   deleteMovie: PropTypes.func.isRequired,
 };

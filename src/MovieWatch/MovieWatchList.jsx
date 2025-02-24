@@ -26,8 +26,16 @@ export const MovieWatchList = () => {
     );
   };
 
-  const toggleWatch = () => {};
-  const deleteMovie = () => {};
+  const toggleWatched = (id) => {
+    setMovies(
+      movies.map((movie) =>
+        movie.id == id ? { ...movie, watched: !movie.watched } : movie,
+      ),
+    );
+  };
+  const deleteMovie = (id) => {
+    setMovies(movies.filter((movie) => movie.id !== id));
+  };
 
   return (
     <div className="p-4 bg-gray-200 dark:bg-slate-600">
@@ -36,7 +44,7 @@ export const MovieWatchList = () => {
       <MovieList
         movies={movies}
         rateMovie={rateMovie}
-        toggleWatch={toggleWatch}
+        toggleWatched={toggleWatched}
         deleteMovie={deleteMovie}
       />
     </div>
