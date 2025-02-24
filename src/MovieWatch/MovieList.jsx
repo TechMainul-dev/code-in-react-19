@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { MovieItem } from './MovieItem';
 
-export const MovieList = ({ movies }) => {
+export const MovieList = ({ movies, rateMovie, toggleWatch, deleteMovie }) => {
   return (
     <div>
       {movies.length === 0 ? (
@@ -11,7 +11,13 @@ export const MovieList = ({ movies }) => {
       ) : (
         <ul className="space-y-3">
           {movies.map((movie) => (
-            <MovieItem key={movie.id} movie={movie} />
+            <MovieItem
+              key={movie.id}
+              movie={movie}
+              rateMovie={rateMovie}
+              toggleWatch={toggleWatch}
+              deleteMovie={deleteMovie}
+            />
           ))}
         </ul>
       )}
@@ -20,9 +26,8 @@ export const MovieList = ({ movies }) => {
 };
 
 MovieList.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+  movies: PropTypes.array.isRequired,
+  rateMovie: PropTypes.func.isRequired,
+  toggleWatch: PropTypes.func.isRequired,
+  deleteMovie: PropTypes.func.isRequired,
 };

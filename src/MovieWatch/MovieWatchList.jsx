@@ -18,11 +18,27 @@ export const MovieWatchList = () => {
     setMovies([...movies, newMovie]);
   };
 
+  const rateMovie = (id, rating) => {
+    console.log(id, rating);
+
+    setMovies(
+      movies.map((movie) => (movie.id == id ? { ...movie, rating } : movie)),
+    );
+  };
+
+  const toggleWatch = () => {};
+  const deleteMovie = () => {};
+
   return (
     <div className="p-4 bg-gray-200 dark:bg-slate-600">
       <Heading />
       <MovieForm addMovie={addMovie} />
-      <MovieList movies={movies} />
+      <MovieList
+        movies={movies}
+        rateMovie={rateMovie}
+        toggleWatch={toggleWatch}
+        deleteMovie={deleteMovie}
+      />
     </div>
   );
 };
